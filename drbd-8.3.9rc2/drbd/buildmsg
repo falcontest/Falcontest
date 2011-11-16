@@ -1,0 +1,48 @@
+    Calling toplevel makefile of kernel source tree, which I believe is in
+    KDIR=/lib/modules/2.6.18-92.el5/source
+
+test -f ../scripts/adjust_drbd_config_h.sh && \
+         KDIR=/lib/modules/2.6.18-92.el5/source O=/lib/modules/2.6.18-92.el5/build /bin/bash ../scripts/adjust_drbd_config_h.sh
+/lib/modules/2.6.18-92.el5/source ~/d839_rc2/drbd-8.3.9rc2/drbd
+KDIR=/lib/modules/2.6.18-92.el5/source
+O=/lib/modules/2.6.18-92.el5/build
+~/d839_rc2/drbd-8.3.9rc2/drbd
+
+  Using unmodified drbd_config.h
+
+make -C /lib/modules/2.6.18-92.el5/source  O=/lib/modules/2.6.18-92.el5/build SUBDIRS=/home/ben.wang/d839_rc2/drbd-8.3.9rc2/drbd  modules
+make[1]: Entering directory `/usr/src/kernels/2.6.18-92.el5-x86_64'
+  CC [M]  /home/ben.wang/d839_rc2/drbd-8.3.9rc2/drbd/drbd_buildtag.o
+  CC [M]  /home/ben.wang/d839_rc2/drbd-8.3.9rc2/drbd/drbd_bitmap.o
+  CC [M]  /home/ben.wang/d839_rc2/drbd-8.3.9rc2/drbd/drbd_proc.o
+  CC [M]  /home/ben.wang/d839_rc2/drbd-8.3.9rc2/drbd/drbd_worker.o
+  CC [M]  /home/ben.wang/d839_rc2/drbd-8.3.9rc2/drbd/drbd_receiver.o
+/home/ben.wang/d839_rc2/drbd-8.3.9rc2/drbd/drbd_receiver.c: In function ‘drbd_crypto_alloc_digest_safe’:
+/home/ben.wang/d839_rc2/drbd-8.3.9rc2/drbd/drbd_receiver.c:2916: warning: passing argument 1 of ‘crypto_alloc_hash’ discards qualifiers from pointer target type
+/home/ben.wang/d839_rc2/drbd-8.3.9rc2/drbd/drbd_receiver.c: In function ‘vli_decode_bits’:
+/home/ben.wang/d839_rc2/drbd-8.3.9rc2/drbd/drbd_vli.h:164: warning: control reaches end of non-void function
+/home/ben.wang/d839_rc2/drbd-8.3.9rc2/drbd/drbd_receiver.c: In function ‘receive_bitmap’:
+/home/ben.wang/d839_rc2/drbd-8.3.9rc2/drbd/drbd_receiver.c:3545: warning: ‘rl’ may be used uninitialized in this function
+  CC [M]  /home/ben.wang/d839_rc2/drbd-8.3.9rc2/drbd/drbd_req.o
+  CC [M]  /home/ben.wang/d839_rc2/drbd-8.3.9rc2/drbd/drbd_actlog.o
+  CC [M]  /home/ben.wang/d839_rc2/drbd-8.3.9rc2/drbd/lru_cache.o
+  CC [M]  /home/ben.wang/d839_rc2/drbd-8.3.9rc2/drbd/drbd_main.o
+/home/ben.wang/d839_rc2/drbd-8.3.9rc2/drbd/drbd_main.c: In function ‘_drbd_send_bio’:
+/home/ben.wang/d839_rc2/drbd-8.3.9rc2/drbd/drbd_main.c:2591: warning: ISO C90 forbids mixed declarations and code
+/home/ben.wang/d839_rc2/drbd-8.3.9rc2/drbd/drbd_main.c: In function ‘drbd_new_device’:
+/home/ben.wang/d839_rc2/drbd-8.3.9rc2/drbd/drbd_main.c:3432: warning: assignment discards qualifiers from pointer target type
+/home/ben.wang/d839_rc2/drbd-8.3.9rc2/drbd/drbd_main.c: In function ‘drbd_init’:
+/home/ben.wang/d839_rc2/drbd-8.3.9rc2/drbd/drbd_main.c:3679: warning: passing argument 4 of ‘proc_create_data’ discards qualifiers from pointer target type
+/home/ben.wang/d839_rc2/drbd-8.3.9rc2/drbd/drbd_main.c:3696: warning: ISO C90 forbids mixed declarations and code
+  CC [M]  /home/ben.wang/d839_rc2/drbd-8.3.9rc2/drbd/drbd_strings.o
+  CC [M]  /home/ben.wang/d839_rc2/drbd-8.3.9rc2/drbd/drbd_nl.o
+  LD [M]  /home/ben.wang/d839_rc2/drbd-8.3.9rc2/drbd/drbd.o
+  Building modules, stage 2.
+  MODPOST
+WARNING: could not find /home/ben.wang/d839_rc2/drbd-8.3.9rc2/drbd/.libmgt.a.cmd for /home/ben.wang/d839_rc2/drbd-8.3.9rc2/drbd/libmgt.a
+  CC      /home/ben.wang/d839_rc2/drbd-8.3.9rc2/drbd/drbd.mod.o
+  LD [M]  /home/ben.wang/d839_rc2/drbd-8.3.9rc2/drbd/drbd.ko
+make[1]: Leaving directory `/usr/src/kernels/2.6.18-92.el5-x86_64'
+mv .drbd_kernelrelease.new .drbd_kernelrelease
+Memorizing module configuration ... done.
+
